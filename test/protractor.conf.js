@@ -39,6 +39,7 @@ exports.config = {
   // webdriver.chrome.driver. If null, Selenium will
   // attempt to find ChromeDriver using PATH.
   // chromeDriver: './selenium/chromedriver',
+  chromeDriver: '../node_modules/webdriver-manager/selenium/chromedriver_2.37',
 
   // ---- 2. To connect to a Selenium Server which is already running ----------
   // The address of a running Selenium Server. If specified, Protractor will
@@ -61,7 +62,7 @@ exports.config = {
   // Boolean. If true, Protractor will connect directly to the browser Drivers
   // at the locations specified by chromeDriver and firefoxPath. Only Chrome
   // and Firefox are supported for direct connect.
-  directConnect: false,
+  directConnect: true,
   // Path to the firefox application binary. If null, will attempt to find
   // firefox in the default locations.
   firefoxPath: null,
@@ -69,7 +70,7 @@ exports.config = {
   // **DEPRECATED**
   // If true, only ChromeDriver will be started, not a Selenium Server.
   // This should be replaced with directConnect.
-  chromeOnly: false,
+  chromeOnly: true,
 
   // ---------------------------------------------------------------------------
   // ----- What tests to run ---------------------------------------------------
@@ -92,6 +93,7 @@ exports.config = {
     'add-template-to-project': 'integration/features/user_adds_template_to_project.spec.js',
     'add-imagestream-to-project': 'integration/features/user_adds_imagestream_to_project.spec.js',
     'create-from-url': 'integration/features/user_creates_from_url.spec.js',
+    'create-config-map': 'integration/features/user_create_configmap.js',
     // e2e: 'integration/e2e.js'
   },
 
@@ -109,6 +111,7 @@ exports.config = {
   // In addition, you may specify count, shardTestFiles, and maxInstances.
   capabilities: {
    // browserName: 'chrome',
+   browserName: 'chrome',
 
    // Name of the process executing this capability.  Not used directly by
    // protractor or the browser, but instead pass directly to third parties
